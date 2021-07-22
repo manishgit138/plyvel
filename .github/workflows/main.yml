@@ -21,9 +21,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - uses: docker/setup-qemu-action@v1
+        name: Set up QEMU
+
       - name: build wheel for arm64
         run: |
-          docker run -v /var/run/docker.sock:/var/run/docker.sock -it --name wheel_check arm64v8/ubuntu:20.04 \
+          docker run -v /var/run/docker.sock:/var/run/docker.sock arm64v8/ubuntu:20.04 \
             bash -exc 'apt-get -y update && apt-get -y install git make curl python3 python3-pip && \
             git clone https://github.com/wbolster/plyvel && \
             cd plyvel && \
