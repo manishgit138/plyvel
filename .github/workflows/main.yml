@@ -17,6 +17,8 @@ jobs:
 
       - name: build wheel for arm64
         run: |
+          mkdir test
+          cd test
           git clone https://github.com/manishgit138/plyvel
           cd plyvel
           chmod 777 ./build_wheel_arm64.sh
