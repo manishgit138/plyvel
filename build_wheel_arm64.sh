@@ -8,7 +8,8 @@ docker run -v /var/run/docker.sock:/var/run/docker.sock -v $pwd:/plyvel --workdi
    bash -exc 'apt-get -y update && apt-get -y install git make curl python3 python3-pip && \
    curl -fsSL https://get.docker.com -o get-docker.sh && \
    sh get-docker.sh && \
-   cd /plyvel && \
+   ls && \
+   cd plyvel && \
    pip install cibuildwheel && \
    ls && \
    pwd && \
