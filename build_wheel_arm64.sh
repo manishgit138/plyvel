@@ -9,4 +9,6 @@ docker run -v /var/run/docker.sock:/var/run/docker.sock -v $pwd:/ws:rw --workdir
    curl -fsSL https://get.docker.com -o get-docker.sh && \
    sh get-docker.sh && \
    pip install cibuildwheel && \
+   ls && \
+   pwd && \
    make release'
